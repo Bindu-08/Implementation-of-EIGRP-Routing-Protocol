@@ -1,0 +1,239 @@
+autostart = False
+version = 0.8.7
+[127.0.0.1:7200]
+    workingdir = C:\Users\bhavy\AppData\Local\Temp
+    udp = 10000
+    [[2691]]
+        image = C:\Users\bhavy\Downloads\c2691-i-mz.123-22-1.image
+        idlepc = 0x60559bc8
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R4]]
+        model = 2691
+        console = 2003
+        aux = 2100
+        sparsemem = False
+        cnfg = configs\R4.cfg
+        wic0/0 = WIC-1T
+        wic0/1 = WIC-1T
+        wic0/2 = WIC-1T
+        s0/0 = R2 s0/0
+        s0/1 = R3 s0/1
+        s0/2 = R5 s0/2
+        slot1 = NM-4T
+        x = -41.0
+        y = -56.0
+        z = 1.0
+        hx = 2.25735931288
+        hy = -44.7989898732
+    [[ROUTER R1]]
+        model = 2691
+        console = 2000
+        aux = 2101
+        sparsemem = False
+        cnfg = configs\R1.cfg
+        wic0/0 = WIC-1T
+        wic0/1 = WIC-1T
+        wic0/2 = WIC-1T
+        s0/0 = R3 s0/0
+        s0/1 = R2 s0/1
+        f0/0 = SW1 1
+        slot1 = NM-4T
+        x = -75.3137084989
+        y = -496.61731573
+        z = 1.0
+        hx = 24.7426406871
+        hy = 40.0538238692
+    [[ROUTER R2]]
+        model = 2691
+        console = 2002
+        aux = 2103
+        wic0/0 = WIC-1T
+        wic0/1 = WIC-1T
+        wic0/2 = WIC-1T
+        s0/0 = R4 s0/0
+        s0/1 = R1 s0/1
+        slot1 = NM-4T
+        x = 360.955410847
+        y = -237.053823869
+        z = 1.0
+        hx = 77.2106781186
+        hy = -6.61522368916
+    [[ROUTER R3]]
+        model = 2691
+        console = 2001
+        aux = 2102
+        cnfg = configs\R3.cfg
+        wic0/0 = WIC-1T
+        wic0/1 = WIC-1T
+        wic0/2 = WIC-1T
+        s0/0 = R1 s0/0
+        s0/1 = R4 s0/1
+        slot1 = NM-4T
+        x = -452.629509039
+        y = -198.627416998
+        z = 1.0
+        hx = -61.5243866177
+        hy = -0.958369439622
+    [[ETHSW SW1]]
+        1 = access 1 R1 f0/0
+        2 = access 1 NIO_udp:30001:127.0.0.1:20001
+        x = 484.879725677
+        y = -502.374675043
+        z = 1.0
+        hx = -11.6005050634
+        hy = -44.8994949366
+[127.0.0.1:7201]
+    workingdir = C:\Users\bhavy\AppData\Local\Temp
+    udp = 10100
+    [[2691]]
+        image = C:\Users\bhavy\Downloads\c2691-i-mz.123-22-1.image
+        idlepc = 0x60559bc8
+        ghostios = True
+    [[ROUTER R5]]
+        model = 2691
+        console = 2004
+        aux = 2104
+        cnfg = configs\R5.cfg
+        wic0/0 = WIC-1T
+        wic0/1 = WIC-1T
+        wic0/2 = WIC-1T
+        s0/0 = R6 s0/0
+        s0/1 = R7 s0/1
+        s0/2 = R4 s0/2
+        slot1 = NM-4T
+        x = -52.9583694396
+        y = 229.663996924
+        z = 1.0
+        hx = -21.7842712474
+        hy = -34.0710678119
+    [[ROUTER R6]]
+        model = 2691
+        console = 2005
+        aux = 2105
+        cnfg = configs\R6.cfg
+        wic0/0 = WIC-1T
+        wic0/1 = WIC-1T
+        wic0/2 = WIC-1T
+        s0/0 = R5 s0/0
+        s0/1 = R8 s0/1
+        slot1 = NM-4T
+        x = -434.144227665
+        y = 364.676190233
+        z = 1.0
+        hx = -65.624891681
+        hy = 0.455844122699
+    [[ROUTER R7]]
+        model = 2691
+        console = 2006
+        aux = 2106
+        cnfg = configs\R7.cfg
+        wic0/0 = WIC-1T
+        wic0/1 = WIC-1T
+        wic0/2 = WIC-1T
+        s0/0 = R8 s0/0
+        s0/1 = R5 s0/1
+        slot1 = NM-4T
+        x = 348.298556597
+        y = 346.462986798
+        z = 1.0
+        hx = 70.1396103067
+        hy = -2.37258300205
+    [[ROUTER R8]]
+        model = 2691
+        console = 2007
+        aux = 2107
+        cnfg = configs\R8.cfg
+        wic0/0 = WIC-1T
+        wic0/1 = WIC-1T
+        wic0/2 = WIC-1T
+        s0/0 = R7 s0/0
+        s0/1 = R6 s0/1
+        f0/0 = SW2 1
+        slot1 = NM-4T
+        x = -39.0588745031
+        y = 646.582827845
+        z = 1.0
+        hx = 0.843145750511
+        hy = -50.4558441227
+    [[ETHSW SW2]]
+        1 = access 1 R8 f0/0
+        2 = access 1 NIO_udp:30000:127.0.0.1:20000
+        x = -462.151803616
+        y = 653.269119346
+        z = 1.0
+        hx = 4.0147186258
+        hy = -54.9705627485
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "Please use Username and Password for all devices : 646 "
+        x = -1172.0
+        y = -755.0
+    [[NOTE 2]]
+        text = "192.168.11.0/24"
+        x = -390.837661841
+        y = 679.24891681
+        color = "#0000ff"
+    [[NOTE 3]]
+        text = "192.168.4.0/24"
+        x = -509.116882454
+        y = -407.979797465
+        color = "#0000ff"
+    [[NOTE 4]]
+        text = "192.168.5.0/24"
+        x = -453.962553522
+        y = -79.8822509939
+        color = "#0000ff"
+    [[NOTE 5]]
+        text = "192.168.9.0/24"
+        x = 269.345237791
+        y = 497.614357137
+        color = "#0000ff"
+    [[NOTE 6]]
+        text = "192.168.8.0/24"
+        x = -460.347329833
+        y = 243.215295476
+        color = "#0000ff"
+    [[NOTE 7]]
+        text = "192.168.10.0/24"
+        x = -528.915872328
+        y = 478.732106144
+        color = "#0000ff"
+    [[NOTE 8]]
+        text = "192.168.1.0/24"
+        x = 87.6812408671
+        y = -538.087445203
+        color = "#0000ff"
+    [[NOTE 9]]
+        text = "192.168.3.0/24"
+        x = 161.22034611
+        y = -92.6101730553
+        color = "#0000ff"
+    [[NOTE 10]]
+        text = "192.168.2.0/24"
+        x = 210.717820794
+        y = -396.666088965
+        color = "#0000ff"
+    [[NOTE 11]]
+        text = "192.168.7.0/24"
+        x = 229.676190233
+        y = 245.901586977
+        color = "#0000ff"
+    [[NOTE 12]]
+        text = "192.168.6.0/24"
+        x = 8.48528137424
+        y = 71.43860018
+        color = "#0000ff"
+    [[Cloud C2]]
+        symbol = Host
+        x = -908.5
+        y = 636.5
+        z = 1.0
+        connections = SW2:2:nio_udp:30000:127.0.0.1:20000
+    [[Cloud C1]]
+        symbol = Host
+        x = 882.5
+        y = -514.5
+        z = 1.0
+        connections = SW1:2:nio_udp:30001:127.0.0.1:20001
